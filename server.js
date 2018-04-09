@@ -1,7 +1,9 @@
 var express = require('express');
 
 var app = express();
-var server = app.listen(8000, "0.0.0.0");
+
+var port = process.env.PORT || 8000;
+var server = app.listen(port);
 app.use(express.static('public'));
 
 var players = [];
