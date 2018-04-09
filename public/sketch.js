@@ -47,7 +47,8 @@ function setup() {
     colorMode(RGB);
     noStroke();
 
-    socket = io.connect('192.168.1.7:8000');
+    var port = process.env.PORT || 8080;
+    socket = io.connect(port);
     socket.on('players', playersUpdated);
 
     input = createInput();
